@@ -58,21 +58,42 @@ public class FirstViewController: UIViewController, CAAnimationDelegate {
         view.layer.addSublayer(shapeLayer)
         view.layer.addSublayer(overShapeLayer)
         
-        let imageView = UIImageView(frame: CGRect(x: 95, y: 20, width: 100, height: 100))
+        let imageView = UIImageView(frame: CGRect(x: 230, y: 22, width: 45, height: 45))
         imageView.image = UIImage(named: "Apple.png")
         view.addSubview(imageView)
         
-        let button = UIButton(frame: CGRect(x: 100, y: 325, width: 100, height: 50))
+        let secondImageView = UIImageView(frame: CGRect(x: 100, y: 150, width: 100, height: 100))
+        secondImageView.image = UIImage(named: "Alex.jpg")
+        secondImageView.layer.cornerRadius = 50
+        secondImageView.layer.masksToBounds = true
+        secondImageView.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        secondImageView.layer.borderWidth = 2
+        view.addSubview(secondImageView)
+        
+        let button = UIButton(type: .system)
+        button.frame = CGRect(x: 100, y: 325, width: 100, height: 50)
         button.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         button.layer.cornerRadius = 8
         button.layer.masksToBounds = true
         button.layer.borderWidth = 2
         button.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        button.setTitle("Start", for: .normal)
+        button.setTitleColor(UIColor.black, for: .normal)
         button.alpha = 0.8
-        
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        
         view.addSubview(button)
+        
+        let label = UILabel(frame: CGRect(x: 20, y: 20, width: 260, height: 55))
+        label.layer.borderWidth = 2
+        label.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        label.layer.cornerRadius = 8
+        label.layer.masksToBounds = true
+        label.text = " WWDC2018"
+        label.textColor = UIColor.white
+        label.font = UIFont(name: "AppleSDGothicNeo-Light" , size: 40)
+        view.addSubview(label)
+        
+        perfomBluring()
     }
     
     @objc func buttonAction() {
@@ -81,10 +102,24 @@ public class FirstViewController: UIViewController, CAAnimationDelegate {
         animation.duration = 3
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         animation.fillMode = kCAFillModeBoth
-        animation.isRemovedOnCompletion = true
+        animation.isRemovedOnCompletion = false
         animation.delegate = self
         overShapeLayer.add(animation, forKey: nil)
-        //need to add completion block
+    }
+    
+    public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        let nextViewController = MainViewController()
+        self.present(nextViewController, animated: true, completion: nil)
+        
+    }
+    
+    func perfomBluring() {
+        let blureEffect = UIBlurEffect(style: .regular)
+        let blerEffectView = UIVisualEffectView(effect: blureEffect)
+        blerEffectView.frame = self.view.bounds
+        blerEffectView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        self.view.insertSubview(blerEffectView, at: 1)
     }
     
 }
+
