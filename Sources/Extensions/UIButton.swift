@@ -43,4 +43,33 @@ extension UIButton {
         self.setImage(UIImage(named: "End.png"), for: .normal)
     }
     
+    public func setupHobbiesControllerButtonAppearence(x: Double, y: Double, width: Double, height: Double) {
+        self.frame = CGRect(x: x, y: y, width: width, height: height)
+        self.alpha = 0.7
+        self.tintColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
+        self.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).cgColor
+        self.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        self.layer.borderWidth = 0.5
+        self.layer.borderColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
+        self.layer.shadowOpacity = 1.0
+        self.layer.shadowRadius = 5.0
+        self.layer.masksToBounds = false
+        self.layer.cornerRadius = 40
+    }
+    
+    public func setupPopUpExitButton() {
+        self.frame = CGRect(x: 105.0, y: 315.0, width: 30.0, height: 30.0)
+        self.alpha = 1
+        self.tintColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
+        self.setImage(UIImage(named: "PopUpExit.png"), for: .normal)
+    }
+    
+    
+    
+    
+    
+    
+    
+    
 }

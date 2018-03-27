@@ -1,4 +1,4 @@
-//: Playground - noun: a place where people can play
+// Aleksey Petrenko
 
 import UIKit
 import PlaygroundSupport
@@ -10,5 +10,7 @@ window.makeKeyAndVisible()
 
 PlaygroundPage.current.needsIndefiniteExecution = true
 PlaygroundPage.current.liveView = window
+
+
 
 

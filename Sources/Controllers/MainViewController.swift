@@ -22,7 +22,7 @@ public class MainViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         view.layer.insertSublayer(gradient, at: 0)
-        descriptionLabel.setupDescriptionLabel()
+        descriptionLabel.setupMainControllerDescriptionLabel()
         endButton.setupEndButton()
         setButtons()
         setLabels()
@@ -50,16 +50,13 @@ public class MainViewController: UIViewController {
             self.labels[3].frame.origin.x -= 290
             self.descriptionLabel.frame.origin.x -= 550
             self.endButton.frame.origin.y -= 65
-        }, completion: {
-            (Completed: Bool) -> Void in
-            return
-        })
+        }, completion: nil)
     }
     
     func setLabels() {
         for num in 0..<4 {
             let label = UILabel()
-            label.setupMainControllerLabelAppearence(x: labelX, y: labelY, width: 80.0, height: 25.0)
+            label.setupLabelAppearence(x: labelX, y: labelY, width: 80.0, height: 25.0)
             switch num {
             case 0:
                 label.text = "[About me]"
