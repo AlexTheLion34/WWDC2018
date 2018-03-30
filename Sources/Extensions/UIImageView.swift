@@ -7,7 +7,7 @@ extension UIImageView {
         self.image = UIImage(named: "Alex.jpg")
         self.layer.cornerRadius = 50
         self.layer.masksToBounds = true
-        self.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        self.layer.borderColor = Design.secondMainColor.cgColor
         self.layer.borderWidth = 2
         self.alpha = 0
     }

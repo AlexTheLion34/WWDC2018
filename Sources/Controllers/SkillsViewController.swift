@@ -11,18 +11,18 @@ public class SkillsViewController: UIViewController, UITableViewDelegate, UITabl
         didSet {
             table.frame = CGRect(x: 50, y: 100, width: 200, height: 300)
             table.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-            table.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).cgColor
+            table.layer.shadowColor = Design.shadowColor.cgColor
             table.layer.shadowOffset = CGSize(width: 0, height: 5)
             table.layer.shadowOpacity = 1
             table.delegate = self
             table.dataSource = self
             table.layer.shadowRadius = 5
             table.layer.borderWidth = 1
-            table.layer.borderColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+            table.layer.borderColor = Design.firstMainColor.cgColor
             table.layer.masksToBounds = false
             table.layer.cornerRadius = 10
             table.alpha = 0.6
-            table.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            table.backgroundColor = Design.secondMainColor
             table.rowHeight = 75.0
         }
     }
@@ -59,7 +59,7 @@ public class SkillsViewController: UIViewController, UITableViewDelegate, UITabl
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.setUpTableViewCell()
         let languageLabel = UILabel()
-        languageLabel.setupLanguageLabel(withText: myLanguages[indexPath.row])
+        languageLabel.setupSkillsControllerLanguageLabel(withText: myLanguages[indexPath.row])
         let languageImageView = UIImageView()
         languageImageView.setupLanguageImageView(withImage: imagesOfLanguages[indexPath.row])
         cell.addSubview(languageImageView)

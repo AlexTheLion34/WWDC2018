@@ -2,15 +2,15 @@ import UIKit
 
 public class MainViewController: UIViewController {
     
-    var buttons = [UIButton]()
-    var labels = [UILabel]()
-    var buttonX = -100.0
-    var buttonY = 70.0
-    var labelX = -100.0
-    var labelY = 155.0
-    var loaded = false
-    let descriptionLabel = UILabel()
-    let endButton = UIButton(type: .system)
+    private var buttons = [UIButton]()
+    private var labels = [UILabel]()
+    private var buttonX = -100.0
+    private var buttonY = 70.0
+    private var labelX = -100.0
+    private var labelY = 155.0
+    private var loaded = false
+    private let descriptionLabel = UILabel()
+    private let endButton = UIButton(type: .system)
     
     
     lazy var gradient = setGradientLayer()
@@ -53,7 +53,7 @@ public class MainViewController: UIViewController {
         }, completion: nil)
     }
     
-    func setLabels() {
+    private func setLabels() {
         for num in 0..<4 {
             let label = UILabel()
             label.setupLabelAppearence(x: labelX, y: labelY, width: 80.0, height: 25.0)
@@ -74,7 +74,7 @@ public class MainViewController: UIViewController {
         }
     }
     
-    func setButtons() {
+    private func setButtons() {
         for num in 0..<4 {
             let button = UIButton(type: .system)
             button.setupMainControllerButtonAppearence(x: buttonX, y: buttonY, width: 80, height: 80)

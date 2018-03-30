@@ -3,7 +3,7 @@
 import UIKit
 import PlaygroundSupport
 
-let window = UIWindow(frame: CGRect(x: 0, y: 0, width: 300, height: 500))
+let window = UIWindow(frame: Design.playgroundRect)
 
 window.rootViewController = FirstViewController()
 window.makeKeyAndVisible()
@@ -11,6 +11,5 @@ window.makeKeyAndVisible()
 PlaygroundPage.current.needsIndefiniteExecution = true
 PlaygroundPage.current.liveView = window
 
-
-
-
+//need to add a few more extensions to uiview
+//need to create fonts constans

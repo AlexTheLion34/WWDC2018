@@ -1,6 +1,5 @@
 import UIKit
 
-
 func readFromFile(withName name: String) -> (String) {
     var content = ""
     let fileURL = Bundle.main.url(forResource: name, withExtension: "txt")
@@ -12,3 +11,4 @@ func readFromFile(withName name: String) -> (String) {
     
     return content
 }
+

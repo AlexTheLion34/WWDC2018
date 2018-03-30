@@ -52,7 +52,7 @@ public class HobbiesViewController: UIViewController {
         }, completion: nil)
     }
     
-    func setButtons() {
+    private func setButtons() {
         var x = 310.0
         var y = 50.0
         for num in 0..<3 {
@@ -77,7 +77,7 @@ public class HobbiesViewController: UIViewController {
         }
     }
     
-    func setLabels() {
+    private func setLabels() {
         var labelX = 310.0
         var labelY = 135.0
         for num in 0..<3 {
@@ -99,17 +99,19 @@ public class HobbiesViewController: UIViewController {
         }
     }
     
-    @objc func firstButtonTapped() {
+    @objc private func firstButtonTapped() {
         self.view.addSubview(popView)
         popView.addSubview(popUpExitButton)
         let scView = popView.subviews[0] as! UIScrollView
+        scView.contentSize = CGSize(width: 230, height: 450)
         let bottomOffset = CGPoint(x: 0, y: 0)
         scView.setContentOffset(bottomOffset, animated: false)
         let imView = popView.subviews[0].subviews[1] as! UIImageView
         imView.image = UIImage(named: "EV3.png")
         let lbl = popView.subviews[0].subviews[0] as! UILabel
         lbl.text = readFromFile(withName: "EV3")
-        lbl.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        lbl.numberOfLines = 25
+        lbl.sizeToFit()
         popView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
         UIView.animate(withDuration: 0.4, animations: {
             self.visualEffectView.isHidden = false
@@ -118,14 +120,19 @@ public class HobbiesViewController: UIViewController {
         })
     }
     
-    @objc func secondButtonTapped() {
+    @objc private func secondButtonTapped() {
         self.view.addSubview(popView)
         popView.addSubview(popUpExitButton)
         let scView = popView.subviews[0] as! UIScrollView
+        scView.contentSize = CGSize(width: 230, height: 410)
         let bottomOffset = CGPoint(x: 0, y: 0)
         scView.setContentOffset(bottomOffset, animated: false)
         let imView = popView.subviews[0].subviews[1] as! UIImageView
         imView.image = UIImage(named: "NBA.png")
+        let lbl = popView.subviews[0].subviews[0] as! UILabel
+        lbl.text = readFromFile(withName: "Basketball")
+        lbl.numberOfLines = 25
+        lbl.sizeToFit()
         popView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
         UIView.animate(withDuration: 0.6, animations: {
             self.visualEffectView.isHidden = false
@@ -134,14 +141,19 @@ public class HobbiesViewController: UIViewController {
         })
     }
     
-    @objc func thirdButtonTapped() {
+    @objc private func thirdButtonTapped() {
         self.view.addSubview(popView)
         popView.addSubview(popUpExitButton)
         let scView = popView.subviews[0] as! UIScrollView
+        scView.contentSize = CGSize(width: 230, height: 400)
         let bottomOffset = CGPoint(x: 0, y: 0)
         scView.setContentOffset(bottomOffset, animated: false)
         let imView = popView.subviews[0].subviews[1] as! UIImageView
         imView.image = UIImage(named: "SneakersAir.png")
+        let lbl = popView.subviews[0].subviews[0] as! UILabel
+        lbl.text = readFromFile(withName: "Sneakers")
+        lbl.numberOfLines = 25
+        lbl.sizeToFit()
         popView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
         UIView.animate(withDuration: 0.6, animations: {
             self.visualEffectView.isHidden = false
@@ -150,7 +162,7 @@ public class HobbiesViewController: UIViewController {
         })
     }
     
-    @objc func popUpExitTapped() {
+    @objc private func popUpExitTapped() {
         UIView.animate(withDuration: 0.4, animations: {
             self.popView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
             self.popView.alpha = 0

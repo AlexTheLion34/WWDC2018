@@ -1,0 +1,1 @@
+As a beginner IOS developer, I haven’t published any projects to the AppStore yet. But I’d like to share an app, that I’ve made for myself. It helps me going to the gym. If you tap on the icon, a few screenshots will appear.

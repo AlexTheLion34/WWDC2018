@@ -14,5 +14,7 @@ func playMusic() {
     }
 }
 
-
+func stopMusic() {
+    audioPlayer.stop()
+}
 

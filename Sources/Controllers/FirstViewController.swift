@@ -3,13 +3,13 @@ import UIKit
 public class FirstViewController: UIViewController, CAAnimationDelegate {
     
     lazy var gradient = setGradientLayer()
-    let titleLabel = UILabel()
-    let welcomeLabel = UILabel()
-    let myPhotoImageView = UIImageView()
-    let shapeLayer = CAShapeLayer()
-    let overShapeLayer = CAShapeLayer()
+    private let titleLabel = UILabel()
+    private let welcomeLabel = UILabel()
+    private let myPhotoImageView = UIImageView()
+    private let shapeLayer = CAShapeLayer()
+    private let overShapeLayer = CAShapeLayer()
     
-    func setupShapeLayer(_ shapeLayer: CAShapeLayer) {
+    private func setupShapeLayer(_ shapeLayer: CAShapeLayer) {
         shapeLayer.frame = view.bounds
         let path = UIBezierPath()
         path.move(to: CGPoint(x: self.view.frame.width / 2 - 100, y: self.view.frame.height / 4 + 265))
@@ -50,7 +50,7 @@ public class FirstViewController: UIViewController, CAAnimationDelegate {
         playMusic()
     }
     
-    func animateItems() {
+    private func animateItems() {
         UIView.animate(withDuration: 1.5, animations: {
             self.titleLabel.alpha = 1.0
         }, completion: {
@@ -79,7 +79,7 @@ public class FirstViewController: UIViewController, CAAnimationDelegate {
         })
     }
     
-    func performLoading() {
+    private func performLoading() {
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         animation.toValue = 1
         animation.duration = 4

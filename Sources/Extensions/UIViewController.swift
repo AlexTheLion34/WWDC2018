@@ -45,7 +45,7 @@ extension UIViewController {
     
     @objc public func fourthButtonAction() {
         let nextController = ProjectsViewController()
-        //nextController.modalTransitionStyle = .partialCurl
+        nextController.modalTransitionStyle = .crossDissolve
         present(nextController, animated: true, completion: nil)
     }
     
@@ -55,8 +55,9 @@ extension UIViewController {
         let imageView = UIImageView()
         let label = UILabel()
         label.frame = CGRect(x: 5, y: 160, width: 220, height: 250)
-        label.lineBreakMode = .byWordWrapping
-        label.numberOfLines = 50
+        label.font = UIFont(name: "AppleSDGothicNeo-Light", size: 14)
+        label.textColor = Design.firstMainColor
+        label.textAlignment = .justified
         imageView.layer.cornerRadius = 10
         imageView.layer.masksToBounds = true
         imageView.frame = CGRect(x: 5, y: 5, width: 220, height: 150)
@@ -66,22 +67,20 @@ extension UIViewController {
         scrollView.frame = CGRect(x: 5, y: 5, width: 230, height: 310)
         scrollView.layer.cornerRadius = 10
         scrollView.alpha = 1.0
-        scrollView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        scrollView.backgroundColor = Design.secondMainColor
         let bottomOffset = CGPoint(x: 0, y: 0)
         scrollView.setContentOffset(bottomOffset, animated: true)
         popView.frame = CGRect(x: 30, y: 75, width: 240, height: 350)
         popView.alpha = 0
-        popView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        popView.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).cgColor
+        popView.backgroundColor = Design.secondMainColor
+        popView.layer.shadowColor = Design.shadowColor.cgColor
         popView.layer.shadowOffset = CGSize(width: 0, height: 5)
         popView.layer.shadowOpacity = 1
         popView.layer.shadowRadius = 5
         popView.layer.cornerRadius = 10
         scrollView.addSubview(label)
         scrollView.addSubview(imageView)
-        scrollView.contentSize = CGSize(width: 230, height: 410)
         popView.addSubview(scrollView)
         return(popView)
     }
-    
 }
