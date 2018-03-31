@@ -61,18 +61,21 @@ public class AboutMeViewController: UIViewController, UIScrollViewDelegate {
             case 0:
                 headingLabel.text = "Myself"
                 textLabel.text = readFromFile(withName: "Myself")
-                additionalScroll.contentSize = CGSize(width: 230, height: 365)
-                textLabel.frame = CGRect(x: 5, y: 5, width: 220, height: 355)
+                additionalScroll.contentSize = CGSize(width: 230, height: 360)
+                textLabel.frame = CGRect(x: 5, y: 5, width: 220, height: 360)
+                textLabel.sizeToFit()
             case 1:
                 headingLabel.text = "Education"
                 textLabel.text = readFromFile(withName: "Education")
-                additionalScroll.contentSize = CGSize(width: 230, height: 350)
-                textLabel.frame = CGRect(x: 5, y: 5, width: 220, height: 355)
+                additionalScroll.contentSize = CGSize(width: 230, height: 320)
+                textLabel.frame = CGRect(x: 5, y: 5, width: 220, height: 320)
+                textLabel.sizeToFit()
             default:
                 headingLabel.text = "Why Apple?"
                 textLabel.text = readFromFile(withName: "WhyApple?")
                 additionalScroll.contentSize = CGSize(width: 230, height: 290)
-                textLabel.frame = CGRect(x: 5, y: 5, width: 220, height: 290)
+                textLabel.frame = CGRect(x: 5, y: 5, width: 220, height: 310)
+                textLabel.sizeToFit()
             }
             imageView.layer.cornerRadius = 10
             imageView.layer.masksToBounds = true

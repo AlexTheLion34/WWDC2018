@@ -1,6 +1,6 @@
 // Aleksey Petrenko
 //All the icons are taken from free desktop Mac App - Icons8
-//1148 lines
+
 import UIKit
 import PlaygroundSupport
 
