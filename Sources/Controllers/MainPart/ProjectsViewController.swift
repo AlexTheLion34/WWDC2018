@@ -3,7 +3,7 @@ import UIKit
 public class ProjectsViewController: UIViewController {
     
     lazy var gradient = setGradientLayer()
-    lazy var additionalView = setPopView()
+    lazy var additionalView = setAdditionalView()
     private let exitButton = UIButton(type: .system)
     private let visualeffectView = UIVisualEffectView()
     private let introductionLabel = UILabel()
@@ -49,13 +49,9 @@ public class ProjectsViewController: UIViewController {
     }
     
     @objc private func appButtonTapped() {
-        additionalView.frame = CGRect(x: 20, y: 20, width: 260, height: 460)
         exitAdditionalViewButton.frame = CGRect(x: 115, y: 425, width: 30, height: 30)
         additionalView.addSubview(exitAdditionalViewButton)
-        imageView.frame = CGRect(x: 10, y: 30, width: 240, height: 390)
-        imageView.layer.cornerRadius = 10
-        imageView.layer.masksToBounds = true
-        imageView.image = UIImage(named: "First.png")
+        imageView.setupAdditinalImageView(withImage: "First.png")
         segmentedControll.selectedSegmentIndex = 0
         segmentedControll.setupSegmentedControll()
         segmentedControll.addTarget(self, action: #selector(segmentedControllDidChanged), for: .valueChanged)

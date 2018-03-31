@@ -1,5 +1,6 @@
 // Aleksey Petrenko
-
+//All the icons are taken from free desktop Mac App - Icons8
+//1148 lines
 import UIKit
 import PlaygroundSupport
 
@@ -11,5 +12,4 @@ window.makeKeyAndVisible()
 PlaygroundPage.current.needsIndefiniteExecution = true
 PlaygroundPage.current.liveView = window
 
-//need to add a few more extensions to uiview
-//need to create fonts constans
+

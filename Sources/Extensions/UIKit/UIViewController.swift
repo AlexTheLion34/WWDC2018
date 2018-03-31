@@ -19,34 +19,19 @@ extension UIViewController {
         return gradientLayer
     }
     
+    public func setFinishLayer() -> (CAGradientLayer) {
+        let gradientColors = [#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).cgColor]
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 0)
+        gradientLayer.colors = gradientColors
+        return gradientLayer
+    }
+    
     @objc public func goBack() {
         let previousViewController = MainViewController()
         previousViewController.modalTransitionStyle = .crossDissolve
         present(previousViewController, animated: true, completion: nil)
-    }
-    
-    @objc public func firstButtonAction() {
-        let nextController = AboutMeViewController()
-        nextController.modalTransitionStyle = .crossDissolve
-        present(nextController, animated: true, completion: nil)
-    }
-    
-    @objc public func secondButtonAction() {
-        let nextController = SkillsViewController()
-        nextController.modalTransitionStyle = .crossDissolve
-        present(nextController, animated: true, completion: nil)
-    }
-    
-    @objc public func thirdButtonAction() {
-        let nextController = HobbiesViewController()
-        nextController.modalTransitionStyle = .crossDissolve
-        present(nextController, animated: true, completion: nil)
-    }
-    
-    @objc public func fourthButtonAction() {
-        let nextController = ProjectsViewController()
-        nextController.modalTransitionStyle = .crossDissolve
-        present(nextController, animated: true, completion: nil)
     }
     
     public func setPopView() -> (UIView) {
@@ -82,5 +67,14 @@ extension UIViewController {
         scrollView.addSubview(imageView)
         popView.addSubview(scrollView)
         return(popView)
+    }
+    
+    public func setAdditionalView() -> (UIView) {
+        let additionalView = UIView()
+        additionalView.frame = CGRect(x: 20, y: 20, width: 260, height: 460)
+        additionalView.backgroundColor = Design.secondMainColor
+        additionalView.layer.cornerRadius = 10
+        additionalView.layer.masksToBounds = true
+        return(additionalView)
     }
 }

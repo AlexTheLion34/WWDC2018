@@ -10,8 +10,8 @@ public class MainViewController: UIViewController {
     private var labelY = 155.0
     private var loaded = false
     private let descriptionLabel = UILabel()
+    private let endButtonLabel = UILabel()
     private let endButton = UIButton(type: .system)
-    
     
     lazy var gradient = setGradientLayer()
     
@@ -24,6 +24,8 @@ public class MainViewController: UIViewController {
         view.layer.insertSublayer(gradient, at: 0)
         descriptionLabel.setupMainControllerDescriptionLabel()
         endButton.setupEndButton()
+        endButton.addTarget(self, action: #selector(endButtonAction), for: UIControlEvents.touchUpInside)
+        endButtonLabel.setupEndButtonLabel()
         setButtons()
         setLabels()
         performBluring()
@@ -35,6 +37,7 @@ public class MainViewController: UIViewController {
         }
         view.addSubview(descriptionLabel)
         view.addSubview(endButton)
+        view.addSubview(endButtonLabel)
     }
     
     public override func viewDidAppear(_ animated: Bool) {
@@ -50,7 +53,11 @@ public class MainViewController: UIViewController {
             self.labels[3].frame.origin.x -= 290
             self.descriptionLabel.frame.origin.x -= 550
             self.endButton.frame.origin.y -= 65
-        }, completion: nil)
+            self.endButtonLabel.frame.origin.x -= 55
+        }, completion: {
+            (Completed: Bool) -> Void in
+            return
+        })
     }
     
     private func setLabels() {
@@ -98,5 +105,35 @@ public class MainViewController: UIViewController {
             }
             buttons.append(button)
         }
+    }
+    
+    @objc public func firstButtonAction() {
+        let nextController = AboutMeViewController()
+        nextController.modalTransitionStyle = .crossDissolve
+        present(nextController, animated: true, completion: nil)
+    }
+    
+    @objc public func secondButtonAction() {
+        let nextController = SkillsViewController()
+        nextController.modalTransitionStyle = .crossDissolve
+        present(nextController, animated: true, completion: nil)
+    }
+    
+    @objc public func thirdButtonAction() {
+        let nextController = HobbiesViewController()
+        nextController.modalTransitionStyle = .crossDissolve
+        present(nextController, animated: true, completion: nil)
+    }
+    
+    @objc public func fourthButtonAction() {
+        let nextController = ProjectsViewController()
+        nextController.modalTransitionStyle = .crossDissolve
+        present(nextController, animated: true, completion: nil)
+    }
+    
+    @objc public func endButtonAction() {
+        let nextController = FinishViewController()
+        nextController.modalTransitionStyle = .crossDissolve
+        present(nextController, animated: true, completion: nil)
     }
 }

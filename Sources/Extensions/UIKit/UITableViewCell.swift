@@ -8,6 +8,5 @@ extension UITableViewCell {
         self.layer.borderWidth = 1
         self.layer.borderColor = Design.firstMainColor.cgColor
     }
-    
 }
 

@@ -16,4 +16,11 @@ extension UIImageView {
         self.frame = CGRect(x: 5, y: 12.5, width: 50, height: 50)
         self.image = UIImage(named: image)
     }
+    
+    public func setupAdditinalImageView(withImage image: String) {
+        self.frame = CGRect(x: 10, y: 30, width: 240, height: 390)
+        self.layer.cornerRadius = 10
+        self.layer.masksToBounds = true
+        self.image = UIImage(named: image)
+    }
 }

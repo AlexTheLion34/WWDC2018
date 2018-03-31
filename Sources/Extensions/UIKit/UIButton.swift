@@ -23,16 +23,13 @@ extension UIButton {
         self.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
         self.layer.shadowOpacity = 0.5
         self.layer.shadowRadius = 2.5
-        self.layer.borderWidth = 1.5
-        self.layer.borderColor = Design.firstMainColor.cgColor
         self.tintColor = Design.firstMainColor
         self.layer.masksToBounds = false
-        self.layer.cornerRadius = 17.5
         self.setImage(UIImage(named: "Exit.png"), for: .normal)
     }
     
     public func setupEndButton() {
-        self.frame = CGRect(x: 255.0, y: 510.0, width: 35, height: 35)
+        self.frame = CGRect(x: 250.0, y: 505.0, width: 35, height: 35)
         self.layer.shadowColor = Design.shadowColor.cgColor
         self.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
         self.layer.shadowOpacity = 0.5

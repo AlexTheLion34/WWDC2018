@@ -8,7 +8,6 @@ func readFromFile(withName name: String) -> (String) {
     } catch {
         print(error.localizedDescription)
     }
-    
     return content
 }
 
